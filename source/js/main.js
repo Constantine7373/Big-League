@@ -25,7 +25,7 @@ let pageLoading = setTimeout(() => {
     window.addEventListener('keypress', loaderClose);
     loaderBtn.addEventListener('click', loaderClose);
   }
-}, 1000);
+}, 5000);
 // ----------------
 // Работа с мобильным меню
 const preventScroll = (e) => {
