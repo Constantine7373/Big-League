@@ -1,3 +1,40 @@
 .header {
-  display: block;
+  background: #fff;
+  z-index: 100;
+
+  >.wrapper {
+    position: relative;
+    display: flex;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  &__logo {
+    width: 192px;
+  }
+
+  &__main-nav {
+    width: 70%;
+    margin-left: auto;
+  }
+}
+
+.main-body--animate .header {
+  animation-name: block-fadeout-down;
+  animation-fill-mode: backwards;
+  animation-delay: .45s;
+  animation-duration: .3s;
+  animation-timing-function: ease;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+  }
+
 }

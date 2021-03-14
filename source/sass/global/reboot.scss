@@ -36,6 +36,16 @@ a {
   text-decoration: none;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
 img,
 video {
   display: block;
@@ -79,6 +89,7 @@ select {
 
 // ie11 X removal
 input {
+
   &::-ms-clear,
   &::-ms-reveal {
     display: none;
@@ -109,12 +120,12 @@ input[type="number"] {
 select,
 textarea,
 input:matches([type="email"],
-  [type="number"],
-  [type="password"],
-  [type="search"],
-  [type="tel"],
-  [type="text"],
-  [type="url"]) {
+[type="number"],
+[type="password"],
+[type="search"],
+[type="tel"],
+[type="text"],
+[type="url"]) {
   appearance: none;
 }
 

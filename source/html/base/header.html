@@ -1,6 +1,9 @@
 <header class="header @@if (context.mod) { header--@@mod }">
-  <div class="header__wrapper">
-    <a class="header__logo" @@if (!context.main) { href="index.html"} aria-label="Переход на главную">
+  <div class="wrapper">
+
+    <a class="header__logo" @@if (!context.main) { href="index.html" } aria-label="Переход на главную">
+      @@include("source/html/base/main-logo.html")
     </a>
+    @@include("source/html/base/main-nav.html",{"class":"header__main-nav"})
   </div>
 </header>

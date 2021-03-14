@@ -1,11 +1,16 @@
-.wrapper {
+.main-body__wrapper {
   position: relative;
-
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  min-height: calc(100 * var(--vh, 1vh));
-  overflow-x: hidden;
+  overflow: hidden;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1024px;
+  padding: 0 35px;
+  margin: 0 auto;
 
   &--no-scrollbar {
     height: 100vh;
@@ -32,6 +37,7 @@
 .visually-hidden {
   position: absolute;
 
+
   width: 1px;
   height: 1px;
   margin: -1px;
@@ -43,4 +49,11 @@
   position: fixed;
 
   overflow-y: auto;
+}
+
+@media (max-width: 1024px) {
+  .wrapper {
+    position: relative;
+    max-width: 768px;
+  }
 }

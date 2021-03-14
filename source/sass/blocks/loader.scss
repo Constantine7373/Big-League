@@ -1,0 +1,213 @@
+@keyframes league-in {
+  0% {
+    transform: translateX(-100vw);
+  }
+
+  75% {
+    transform: scaleX(1) translateX(0);
+  }
+
+  85% {
+    transform: scaleX(0.9);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes league-recoil-left {
+  0% {
+    transform-origin: right;
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-10%);
+
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes shield-in {
+  0% {
+    transform: translateY(-50vh);
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes shield-recoil-right {
+  0% {
+    transform-origin: right;
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(10%);
+
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes shield-recoil-left {
+  0% {
+    transform-origin: left;
+    transform: scaleX(0.9);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes shield-letter-fade-out {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes shield-awaiting {
+  0% {
+    transform: translateY(0);
+  }
+
+  60% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes tagline-in {
+  0% {
+    transform: translateX(100vw);
+  }
+
+  75% {
+    transform: scaleX(1);
+    transform: translateX(0);
+  }
+
+  85% {
+    transform: scaleX(0.9);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background: #fff;
+  transition: transform .4s linear;
+
+  &.hide {
+    transform: translateY(-100%);
+  }
+
+  &__logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 78%;
+    transform: translate(-50%, -50%);
+
+    svg {
+      overflow: visible;
+    }
+  }
+
+  .main-logo {
+    &__league {
+      transform-origin: top right;
+      animation-name: league-in, league-recoil-left;
+      animation-duration: .7s, .3s;
+      animation-delay: .2s, 1.3s;
+      animation-timing-function: ease-in, ease-in-out;
+      animation-fill-mode: backwards, none;
+    }
+
+    &__shield {
+      animation-name: shield-in, shield-recoil-right, shield-recoil-left, shield-awaiting;
+      animation-duration: .3s, .3s, .3s, .7s;
+      animation-delay: 0s, .7s, 1.3s, 2.1s;
+      animation-timing-function: ease-in-out, ease-in-out, ease-in-out, ease;
+      animation-fill-mode: backwards, none, none, none;
+      animation-iteration-count: 1, 1, 1, infinite;
+
+    }
+
+    &__shield-letter {
+      animation-name: shield-letter-fade-out;
+      animation-duration: .3s;
+      animation-delay: 1.8s;
+      animation-timing-function: ease-in;
+      animation-fill-mode: backwards;
+    }
+
+    &__tagline {
+      transform-origin: top right;
+      animation-name: tagline-in;
+      animation-duration: .7s;
+      animation-delay: .8s;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: backwards, none;
+    }
+
+  }
+
+  &__continue {
+    font-size: 24px;
+    position: absolute;
+    bottom: 21.4%;
+    left: 50%;
+    border: 0;
+    background: none;
+    height: 1em;
+    padding: 1em 0 0;
+    transform: translateX(-50%);
+    overflow: hidden;
+    transition: padding .3s ease;
+    cursor: pointer;
+  }
+
+}
+
+.main-body--ready {
+  .loader__continue {
+    padding: 0;
+  }
+}
+
+@media (max-width: 1024px) {}
